@@ -1,0 +1,49 @@
+<div class="col-md-6" style="margin-left: 8cm;margin-top: 2cm;border-radius: 5%;">
+  <h2 class="text-center">Add User</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="firstName" style="color: white;">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName" 
+      [ngStyle]="{'border': (addForm.controls.firstName.errors && addForm.controls.firstName.dirty) || firstNameError ? '2px groove red' : '2px groove #d0d0d0f2' }">
+    </div>
+
+    <div class="form-group">
+      <label for="middleName" style="color: white;">Middle Name:</label>
+      <input formControlName="middleName" placeholder="Middle name" name="middleName" class="form-control" id="middleName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName" style="color: white;">Last Name:</label>
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName" 
+      [ngStyle]="{'border': (addForm.controls.lastName.errors && addForm.controls.lastName.dirty) || lastNameError  ? '2px groove red' : '2px groove #d0d0d0f2' }">
+    </div>
+
+    <div class="form-group">
+      <label for="email" style="color: white;">Email address:</label>
+      <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email"
+      [ngStyle]="{'border': (addForm.controls.email.errors && addForm.controls.email.dirty) || emailError ? '2px groove red' : '2px groove #d0d0d0f2' }">
+    </div>
+
+    <div class="form-group">
+      <label for="phone" style="color: white;">Number:</label>
+      <input type="phone" formControlName="phone" placeholder="Number" name="phone" class="form-control" id="phone"
+      [ngStyle]="{'border': (addForm.controls.phone.errors && addForm.controls.phone.dirty) || phoneError ? '2px groove red' : '2px groove #d0d0d0f2' }">
+    </div>
+
+    <div class="form-group">
+      <label for="password" style="color: white;">Password:</label>
+      <input formControlName="password" placeholder="Password" name="password" class="form-control" id="password"
+      [ngStyle]="{'border':addForm.controls.password.errors  ? '2px groove red' : '2px groove #d0d0d0f2' }">
+      <span *ngIf= "addForm.controls.password.errors || passwordError" style="color: red;font-size: small;">*Password and confirm password should be equal</span>
+    </div>
+    <div class="form-group">
+      <label for="conPassword" style="color: white;">Confirm Password:</label>
+      <input formControlName="conPassword" placeholder="confirm password" name="conPassword" class="form-control" id="conPassword" 
+      [ngStyle]="{'border':addForm.controls.conPassword.errors || conPassword ? '2px groove red' : '2px groove #d0d0d0f2' }">
+    </div>
+
+    <button class="btn btn-success" style="margin-bottom: 12px;" style="background: green;color: whitesmoke;">Add</button>
+  <span *ngIf = "formError" style="color: red;font-size: medium;">*Please check you form values</span>
+  </form>
+</div>

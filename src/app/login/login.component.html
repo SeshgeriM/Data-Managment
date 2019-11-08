@@ -1,0 +1,43 @@
+<div class = "row">
+<div class="col" style="background-color: white;">
+  <div class = "col-md-5 box">
+    <h1 style="font-size: xx-large;">Login</h1>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="User name"
+        [ngStyle]="{'border':loginForm.controls.email.errors && loginForm.controls.email.dirty ? '1px groove red' : '1px groove #d0d0d0f2' }">
+        <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+          <div *ngIf="loginForm.controls.email.errors.required">Email is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input formControlName="password" placeholder="Password" name="password" class="form-control" id="password"
+        [ngStyle]="{'border':loginForm.controls.password.errors && loginForm.controls.password.dirty ? '1px groove red' : '1px groove #d0d0d0f2' }">
+        <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+          <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Remember me
+          </label>
+      </div><span><br></span>
+      <div class = "row">
+      <div class="col">
+      <button class="btn btn-default" (click)="onSubmit()" style="background: #05aef0;margin-bottom: 8px;color: whitesmoke;">Login</button></div>
+      <div class="col"><a  style="color: #05aef0;margin-bottom: 8px;">Forgot Password</a></div></div>
+      <div *ngIf="invalidLogin" class="error">
+        <div>Invalid credentials.</div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class = "col half">
+    <label class = "text">Sign Up</label><span><br></span>
+    <span class = "text1">Register for access to all cool member features.</span><span><br><br><br></span>
+    <button class="btn btn-default" (click)="register()" style="margin-right: 6px;background: #007dba;margin-bottom: 8px;margin-left: 8cm;color: whitesmoke;">Register</button>
+  </div>
+</div>

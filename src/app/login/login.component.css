@@ -1,0 +1,21 @@
+.error{
+  color: #FF0000;
+}
+.box {
+  margin-left: 6cm;width: 15cm !important;margin-bottom: 11cm; margin-top: 8cm;
+  padding: 8px;background-color: white;
+}
+.half {
+  background-color: #05aef0;
+}
+.text {
+  color: white;
+  margin-top: 10cm;
+  margin-left: 8cm;
+  font-size: xx-large;
+}
+.text1 {
+  color: white;
+  margin-left: 6cm;
+  margin-bottom: 11cm;
+}
